@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Slightly modified version
+of https://github.com/elenanereiss/Legal-Entity-Recognition/blob/master/src/features.py
+"""
+
 def read_file(text):
     train_sents = []
     sent = []

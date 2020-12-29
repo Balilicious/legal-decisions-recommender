@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Extract several different entities from decision texts
+based on pre-trained CRF-model with features crf-f.pkl
+inspired by https://github.com/elenanereiss/Legal-Entity-Recognition
+"""
+
 from somajo import Tokenizer, SentenceSplitter
 from scripts.features import sent2features
 from nltk.tokenize.treebank import TreebankWordDetokenizer
@@ -11,7 +20,7 @@ similarity_anno = dict()
 
 model_path_anno = "scripts/models/crf-f.pkl"
 
-# Rechtsprechung, Literatur, Richter, Verordnung, EU-Norm, Vorschrift, Vertrag, Gesetz
+# annotations for Rechtsprechung (RS), Literatur (LIT), Richter (RR), Verordnung (VO), EU-Norm (EUN), Vorschrift (VS), Vertrag (VT), Gesetz (GS)
 annotations = ["B-RS","I-RS","B-LIT","I-LIT","B-RR","I-RR","B-VO","I-VO","B-EUN","I-EUN","B-VS","I-VS","B-VT","I-VT","B-GS","I-GS"]
 
 
@@ -20,21 +29,20 @@ def detokenize(words):
     detokenized = d.detokenize(words)
     return detokenized.replace(" .",".").replace(" ,", ",").replace("( ","(").replace(" )", ")")
 
-
 def tokenSplit(text):
     tokenizer = Tokenizer(split_camel_case=False, token_classes=False, extra_info=False)
     tokens = tokenizer.tokenize(text)
     return tokens 
 
 def splitSentTokenIdx(text):
-    # generate tokens from text
+    # generate tokens from text:
     tokens = tokenSplit(text)
 
-    # sort to sentences
+    # sort to sentences:
     sentence_splitter = SentenceSplitter(is_tuple=False)
     sentences = sentence_splitter.split(tokens)
 
-    # add start and end indexes of token in text
+    # add start and end indexes of token in text:
     endIdxUpdate = 0
     sents_idxd = []
     for sent in sentences:
@@ -85,7 +93,7 @@ def extract_annotations_from_text(text):
             sent_tokens.append(token[0])
         sents_anno.append(sent_tokens)
 
-    # prepare features 
+    # prepare features: 
     sents_anno_ = []
     for sent in sents_anno:
       sent_anno = []
@@ -95,10 +103,10 @@ def extract_annotations_from_text(text):
 
     X_anno = [sent2features(s, model_name_anno, similarity_anno) for s in sents_anno_]
 
-    # load model
+    # load model:
     crf_anno = pickle.load(open(model_path_anno, 'rb'))
 
-    # predict annotations
+    # predict annotations:
     y_pred_anno = crf_anno.predict(X_anno)
 
     results_anno = []
