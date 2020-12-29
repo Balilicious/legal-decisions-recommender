@@ -13,13 +13,13 @@ II. Zitate: Extraktion (& deren Evaluation) → Analyse → Abbildung auf Dokume
 
 III. Empfehlungsfunktion/en für Gerichtsentscheidungen:
 
-	a) netzwerkbasierte Empfehlungsfunktion: Aufbau und Analyse des Zitationsnetzwerks → Entwicklung des Empfehlungsalgorithmus → experimentelle Evaluation (s. 4. Notebook)
+   a) netzwerkbasierte Empfehlungsfunktion: Aufbau und Analyse des Zitationsnetzwerks → Entwicklung des Empfehlungsalgorithmus → experimentelle Evaluation (s. 4. Notebook)
 
-	*als Vergleich zu a) :*
+   *als Vergleich zu a) :*
 
-	b) textbasierte Empfehlungsfunktion: Vorbereitung Trainingskorpus → Training word2vec-Modell → Erzeugung von Dokumentenvektoren → Entwicklung textbasierte Empfehlungsfunktion → experimentelle Evaluation (s. 5. Notebook)
+   b) textbasierte Empfehlungsfunktion: Vorbereitung Trainingskorpus → Training word2vec-Modell → Erzeugung von Dokumentenvektoren → Entwicklung textbasierte Empfehlungsfunktion → experimentelle Evaluation (s. 5. Notebook)
 
-	c) hybride Empfehlungsfunktion: Kombination der Verfahren aus a) und b) → experimentelle Evaluation (s. 6. Notebook)
+   c) hybride Empfehlungsfunktion: Kombination der Verfahren aus a) und b) → experimentelle Evaluation (s. 6. Notebook)
 
 IV. Gesamtevaluation durch Expertengruppe
 
