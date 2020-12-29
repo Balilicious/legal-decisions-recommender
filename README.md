@@ -1,9 +1,32 @@
 # legal-decisions-recommender
-## Conception of a Recommender Function for German Court Decisions based on Citation Networks.
+## Conception of a Recommender Function for German Court Decisions based on Citation Networks
 
 *Code-Dokumentation zur Abschlussarbeit "Ähnlichkeiten von Rechtsprechungstexten - Entwurf einer netzwerkbasierten Empfehlungsfunktion für Gerichtsentscheidungen" im Studiengang Angewandte Informatik an der [HTW Berlin](https://www.htw-berlin.de/). Realisiert mit Unterstützung des [Data Analytics Center](https://www.fokus.fraunhofer.de/de/viscom/dana) des Fraunhofer FOKUS (Berlin).*
 
+
+
+## Vorgehen:
+
+I. Daten: Akquise => Vorbereitung (filtern, restruktutieren, säubern) => Analyse (s.  [scripts](https://github.com/rosaba/legal-decisions-recommender/tree/master/scripts) down_rechtsprechung_internet_bgh_strafsachen.py | convert_bgh_xml.py | restructure_bgh_json.py  & 1. Notebook)
+
+II. Zitate: Extraktion (& deren Evaluation) --> Analyse --> Abbildung auf Dokumente (s. 2. & 3. Notebook)
+
+III. Empfehlungsfunktion/en für Gerichtsentscheidungen:
+
+a) netzwerkbasierte Empfehlungsfunktion: Aufbau und Analyse des Zitationsnetzwerks --> Entwicklung des Empfehlungsalgorithmus --> experimentelle Evaluation (s. 4. Notebook)
+
+*als Vergleich zu a) :*
+
+b) textbasierte Empfehlungsfunktion: Vorbereitung Trainingskorpus --> Training word2vec-Modell --> Erzeugung von Dokumentenvektoren --> Entwicklung textbasierte Empfehlungsfunktion --> experimentelle Evaluation (s. 5. Notebook)
+
+c) hybride Empfehlungsfunktion: Kombination der Verfahren aus a) und b) --> experimentelle Evaluation (s. 6. Notebook)
+
+IV. Gesamtevaluation durch Expertengruppe
+
+
+
 ## Notebooks:
+
 1. [DataAnalysis](https://github.com/rosaba/legal-decisions-recommender/blob/master/DataAnalysis.ipynb) :
 
 	Exploration und (weitere) Bereinigung der Daten; Zusammenführung von Textfragmenten.
