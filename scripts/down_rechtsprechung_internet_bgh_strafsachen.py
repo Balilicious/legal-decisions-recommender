@@ -1,9 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Downloads BGH decisions concerning criminal affairs
+from rechtsprechung-im-internet.de
+"""
+
 import requests
 from xml.dom import minidom
 from urllib.parse import urlparse
 import os
 
-datadir = './data_rechtsprechung_bgh_strafsachen'
+datadir = 'orig_data/data_rechtsprechung_bgh_strafsachen'
 tocUrl = 'https://www.rechtsprechung-im-internet.de/rii-toc.xml'
 tocFile = os.path.join(datadir, 'rii-toc.xml')
 
@@ -12,7 +20,7 @@ if not os.path.isdir(datadir):
     os.mkdir(datadir)
     print('Done')
 
-# Download TOC:
+# download table of contents:
 print('updating TOC ...')
 r = requests.get(tocUrl)
 with open(tocFile, 'wb') as f:
@@ -34,7 +42,7 @@ print('found '+ str(numCourtsWithLinks) +' courts with links')
 print('downloading items ...')
 for idx,item in enumerate(courtsWithLinks, start=1):
     itemcourt = item[0].firstChild.nodeValue
-    #download BGH decisions concerning Strafsachen only
+    # download BGH decisions concerning Strafsachen only:
     if itemcourt.startswith("BGH") and itemcourt.endswith("Strafsenat"):
         itemurl = item[1].firstChild.nodeValue
         itemFile = os.path.join(datadir, itemurl[len('http://www.rechtsprechung-im-internet.de/'):])

@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Converts BGH decisions
+from xml to json
+"""
+
 from io import BytesIO
 import zipfile
 import xmltodict
@@ -20,12 +28,12 @@ def convertXmls(archive):
 							xmlF = xmlFile.read()
 							decision = xmltodict.parse(xmlF)
 							decisions.append(decision)
-							#dict2json_rowwise(decision, "converted_bgh_straf_decisions.json")
-	dict2json(decisions, "converted_bgh_straf_decisions_nocomma.json")
+							
+	dict2json(decisions, "orig_data/converted_bgh_straf_decisions_nocomma.json")
 
+# convert 
 def dict2json(dict_list, filename):
-	with open(filename, 'w') as fp:
-		#fp.write('[' + ',\n'.join(json.dumps(i) for i in dict_list) + ']\n')
+	with open(filename, 'w') as fp:		
 		fp.write('\n'.join(json.dumps(i) for i in dict_list))
 
-convertXmls("./data_rechtsprechung_bgh_strafsachen.zip")
+convertXmls("orig_data/data_rechtsprechung_bgh_strafsachen.zip")

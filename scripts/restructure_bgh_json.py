@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+restructure and filter original BGH decisions
+"""
+
 import xmltodict
 import json
 
-# read decisions from json, transform every decision, write transformed version to new file
+# read decisions from json, transform every decision, write transformed version to new file:
 def transformDecisionFromJsonList(filename_in, transformFunction, filename_out):
     transformed_decisions = []
     file = open(filename_in, "r")
@@ -12,10 +16,10 @@ def transformDecisionFromJsonList(filename_in, transformFunction, filename_out):
     for item in json_list:
         decision = json.loads(item)
         transformed_decision = transformFunction(decision)
-        transformed_decisions.append(transformed_decision)
-    #write results to file
+        transformed_decisions.append(transformed_decision)   
     dict2json(transformed_decisions, filename_out)
 
+ # write dict to json file
 def dict2json(dict_list, filename):
 	with open(filename, 'w') as fp:				
 		fp.write('\n'.join(json.dumps(i) for i in dict_list))
@@ -35,17 +39,16 @@ def transformDecision(decision):
 
     titel = extract_element_from_json(entry, ["dokument", "titelzeile", "dl", "dd", "p"])
 
-    # TODO: Tags für Style entfernen. Text aus #text filtern --> bereinigen!
     tenor = extract_element_from_json(entry, ["dokument", "tenor", "div", "dl", "dd", "p"])
 
     gruende = extract_element_from_json(entry, ["dokument", "gruende", "div", "dl", "dd", "p"])
-
 
     decision_dict = {"az": az[0], "datum": datum[0], "doknr": doknr[0], "gertyp": gertyp[0], "spruchkoerper": spruchkoerper[0], "doktyp": doktyp[0], "titel": titel[0], "tenor": tenor, "gruende": gruende}
 
     return decision_dict
 
 
+# function from https://bcmullins.github.io/parsing-json-python/:
 def extract_element_from_json(obj, path):
     '''
     Extracts an element from a nested dictionary or
@@ -104,4 +107,4 @@ def extract_element_from_json(obj, path):
         return outer_arr
 
 
-transformDecisionFromJsonList("./converted_bgh_straf_decisions_nocomma.json", transformDecision, "restructured_bgh_decisions_nocomma.json")
+transformDecisionFromJsonList("orig_data/converted_bgh_straf_decisions_nocomma.json", transformDecision, "orig_data/restructured_bgh_decisions_nocomma.json")
