@@ -7,19 +7,19 @@
 
 ## Vorgehen:
 
-I. Daten: Akquise => Vorbereitung (filtern, restruktutieren, säubern) => Analyse (s.  [scripts](https://github.com/rosaba/legal-decisions-recommender/tree/master/scripts) down_rechtsprechung_internet_bgh_strafsachen.py | convert_bgh_xml.py | restructure_bgh_json.py  & 1. Notebook)
+I. Daten: Akquise → Vorbereitung (filtern, restruktutieren, säubern) → Analyse (s.  [scripts](https://github.com/rosaba/legal-decisions-recommender/tree/master/scripts) & 1. Notebook)
 
-II. Zitate: Extraktion (& deren Evaluation) --> Analyse --> Abbildung auf Dokumente (s. 2. & 3. Notebook)
+II. Zitate: Extraktion (& deren Evaluation) → Analyse → Abbildung auf Dokumente (s. 2. & 3. Notebook)
 
 III. Empfehlungsfunktion/en für Gerichtsentscheidungen:
 
-a) netzwerkbasierte Empfehlungsfunktion: Aufbau und Analyse des Zitationsnetzwerks --> Entwicklung des Empfehlungsalgorithmus --> experimentelle Evaluation (s. 4. Notebook)
+	a) netzwerkbasierte Empfehlungsfunktion: Aufbau und Analyse des Zitationsnetzwerks → Entwicklung des Empfehlungsalgorithmus → experimentelle Evaluation (s. 4. Notebook)
 
-*als Vergleich zu a) :*
+	*als Vergleich zu a) :*
 
-b) textbasierte Empfehlungsfunktion: Vorbereitung Trainingskorpus --> Training word2vec-Modell --> Erzeugung von Dokumentenvektoren --> Entwicklung textbasierte Empfehlungsfunktion --> experimentelle Evaluation (s. 5. Notebook)
+	b) textbasierte Empfehlungsfunktion: Vorbereitung Trainingskorpus → Training word2vec-Modell → Erzeugung von Dokumentenvektoren → Entwicklung textbasierte Empfehlungsfunktion → experimentelle Evaluation (s. 5. Notebook)
 
-c) hybride Empfehlungsfunktion: Kombination der Verfahren aus a) und b) --> experimentelle Evaluation (s. 6. Notebook)
+	c) hybride Empfehlungsfunktion: Kombination der Verfahren aus a) und b) → experimentelle Evaluation (s. 6. Notebook)
 
 IV. Gesamtevaluation durch Expertengruppe
 
