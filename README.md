@@ -7,7 +7,7 @@
 
 ## Vorgehen:
 
-I. <u>Daten</u>: Akquise → Vorbereitung (filtern, restruktutieren, säubern) → Analyse (s.  [scripts](https://github.com/rosaba/legal-decisions-recommender/tree/master/scripts) & 1. Notebook)
+I. <u>Daten</u>: Akquise → Vorbereitung (filtern, restrukturieren, säubern) → Analyse (s.  [scripts](https://github.com/rosaba/legal-decisions-recommender/tree/master/scripts) & 1. Notebook)
 
 II. <u>Zitate</u>: Extraktion (& deren Evaluation) → Analyse → Abbildung auf Dokumente (s. 2. & 3. Notebook)
 
