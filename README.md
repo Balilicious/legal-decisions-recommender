@@ -50,6 +50,8 @@ IV. <u>Gesamtevaluation</u> durch Expertengruppe
 6. [HybridRecommends](https://github.com/rosaba/legal-decisions-recommender/blob/master/HybridRecommends.ipynb) :
 
 	> Berechnung der hybriden Leseempfehlungen für Rechtsprechungen; anekdotische Evaluation; Vorbereitung Gesamtevaluation - Teil III: hybride Empfehlungen.
+	
+Hint: If you can't view the notebooks here have them rendered with [nbviewer](https://nbviewer.jupyter.org/).
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
