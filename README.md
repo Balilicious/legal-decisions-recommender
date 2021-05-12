@@ -1,7 +1,7 @@
 # legal-decisions-recommender
 ## Conception of a Recommender Function for German Court Decisions based on Citation Networks
 
-*Code-Dokumentation zur Abschlussarbeit "Ähnlichkeiten von Rechtsprechungstexten - Entwurf einer netzwerkbasierten Empfehlungsfunktion für Gerichtsentscheidungen" im Studiengang Angewandte Informatik an der [HTW Berlin](https://www.htw-berlin.de/). Realisiert mit Unterstützung des [Data Analytics Center](https://www.fokus.fraunhofer.de/de/viscom/dana) des Fraunhofer FOKUS (Berlin).*
+*Code-Dokumentation zur Abschlussarbeit ["Ähnlichkeiten von Rechtsprechungstexten - Entwurf einer netzwerkbasierten Empfehlungsfunktion für Gerichtsentscheidungen"](https://opus4.kobv.de/opus4-htw/frontdoor/index/index/docId/1464) im Studiengang Angewandte Informatik an der [HTW Berlin](https://www.htw-berlin.de/). Realisiert mit Unterstützung des [Data Analytics Center](https://www.fokus.fraunhofer.de/de/viscom/dana) des Fraunhofer FOKUS (Berlin).*
 
 
 
